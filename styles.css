@@ -5,6 +5,59 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .head {
   display: none;
+}
+
+.add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.library {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #000;
+  width: 30%;
+}
+
+.library :nth-child(even) {
+  background: #d3d3d3;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+  padding: 1px 5px;
+  align-items: center;
+}
+
+#removebtn {
+  padding: 1px 2px;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.add hr {
+  width: 15%;
+  border: 1px solid #000;
+  margin: 1%;
+}
+
+form > input {
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+#addbtn {
+  padding: 1px 2px;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.8);
+  position: relative;
+  right: -81%;
 }
