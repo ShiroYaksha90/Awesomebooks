@@ -34,25 +34,25 @@ class Library {
 const storeBook = new Library();
 // fetch values from input
 function getInput() {
-  const title = document.querySelector('#book-title');
-  const author = document.querySelector('#book-author');
-  const addItem = new Book(title.value, author.value);
+  const title = document.querySelector('#book-title').value;
+  const author = document.querySelector('#book-author').value;
+  const addItem = new Book(title, author);
   return addItem;
 }
 // Showcase the list of books
 function Display(index) {
   const bookList = document.querySelector('.library');
-  const items = document.createElement('div');
+  const container = document.createElement('table');
+  const items = document.createElement('tr');
   items.classList.add('items');
   items.setAttribute('id', index.bookid);
-  items.innerHTML = `<p> ${index.title}</p>
-    <p> ${index.author}</p>`;
+  items.innerHTML = `<th> "${index.title}" by ${index.author}</th>`;
   const rmbtn = document.createElement('button');
   rmbtn.innerHTML = 'Remove';
+  rmbtn.setAttribute('id', 'removebtn');
   rmbtn.addEventListener('click', () => storeBook.remove(index.bookid));
   items.appendChild(rmbtn);
-  const hr = document.createElement('hr');
-  items.appendChild(hr);
+  container.appendChild(items);
   bookList.appendChild(items);
 }
 // Add button
