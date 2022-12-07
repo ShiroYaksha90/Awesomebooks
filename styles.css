@@ -1,0 +1,10 @@
+* {
+  list-style: none;
+  margin: 3px 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.head {
+  display: none;
+}
