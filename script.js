@@ -42,7 +42,6 @@ function getInput() {
 // Showcase the list of books
 function Display(index) {
   const bookList = document.querySelector('.library');
-  const container = document.createElement('table');
   const items = document.createElement('tr');
   items.classList.add('items');
   items.setAttribute('id', index.bookid);
@@ -52,7 +51,6 @@ function Display(index) {
   rmbtn.setAttribute('id', 'removebtn');
   rmbtn.addEventListener('click', () => storeBook.remove(index.bookid));
   items.appendChild(rmbtn);
-  container.appendChild(items);
   bookList.appendChild(items);
 }
 // Add button
@@ -62,6 +60,28 @@ addNewBook.addEventListener('click', () => {
   storeBook.addBook(book);
 });
 
+const add = document.querySelector('.add');
+const display = document.querySelector('.display');
+const contact = document.querySelector('.contact');
+const listLink =document.getElementById('l-link');
+const addLink = document.getElementById('a-link');
+const contactLink = document.getElementById('c-link');
+
+listLink.addEventListener('click', () => {
+  display.style.display='flex'
+  contact.style.display = 'none'
+  add.style.display = 'none';
+});
+addLink.addEventListener('click', () => {
+  display.style.display='none'
+  contact.style.display = 'none'
+  add.style.display = 'flex';
+});
+contactLink.addEventListener('click', () => {
+  display.style.display='none'
+  contact.style.display = 'flex'
+  add.style.display = 'none';
+});
 window.onload = () => {
   storeBook.books = JSON.parse(localStorage.getItem('DB' || '[]'));
   if (storeBook.books === null) {
@@ -69,4 +89,9 @@ window.onload = () => {
     return;
   }
   storeBook.books.forEach((item) => Display(item));
+  live = () => {
+  const date = document.getElementById('date')
+  date.innerHTML= Date().slice(0,25)
+}
+  setInterval(live,1000);
 };
