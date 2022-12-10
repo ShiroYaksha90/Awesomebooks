@@ -12,6 +12,7 @@ html {
 body {
   background-color: rgba(235, 235, 235, 0.496);
 }
+
 .head {
   display: flex;
   flex-direction: column;
@@ -92,6 +93,7 @@ section {
 #form {
   width: 30%;
 }
+
 form > input {
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.8);
   margin: 3% 0;

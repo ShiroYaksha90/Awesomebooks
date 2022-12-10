@@ -63,23 +63,23 @@ addNewBook.addEventListener('click', () => {
 const add = document.querySelector('.add');
 const display = document.querySelector('.display');
 const contact = document.querySelector('.contact');
-const listLink =document.getElementById('l-link');
+const listLink = document.getElementById('l-link');
 const addLink = document.getElementById('a-link');
 const contactLink = document.getElementById('c-link');
 
 listLink.addEventListener('click', () => {
-  display.style.display='flex'
-  contact.style.display = 'none'
+  display.style.display = 'flex';
+  contact.style.display = 'none';
   add.style.display = 'none';
 });
 addLink.addEventListener('click', () => {
-  display.style.display='none'
-  contact.style.display = 'none'
+  display.style.display = 'none';
+  contact.style.display = 'none';
   add.style.display = 'flex';
 });
 contactLink.addEventListener('click', () => {
-  display.style.display='none'
-  contact.style.display = 'flex'
+  display.style.display = 'none';
+  contact.style.display = 'flex';
   add.style.display = 'none';
 });
 window.onload = () => {
@@ -89,9 +89,9 @@ window.onload = () => {
     return;
   }
   storeBook.books.forEach((item) => Display(item));
-  live = () => {
-  const date = document.getElementById('date')
-  date.innerHTML= Date().slice(0,25)
-}
-  setInterval(live,1000);
+  const live = () => {
+    const date = document.getElementById('date');
+    date.innerHTML = Date().slice(0, 25);
+  };
+  setInterval(live, 1000);
 };
